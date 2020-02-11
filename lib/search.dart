@@ -59,13 +59,13 @@ class SearchData extends SearchDelegate<String> {
             type == PageType.QURAN_PAGE ? Router.navigator.pushNamed(
               Router.bodyQuranPage,
               arguments: BodyQuranPageArguments(
-                  data: data[index],
+                  data: suggestionList[index],
                   listData: sl<CaseGetAllPage>().getPages(QURAN_PAGE),
                   type: PageType.QURAN_PAGE),
             ):Router.navigator.pushNamed(
               Router.bodyQuranPage,
               arguments: BodyQuranPageArguments(
-                  data: data[index],
+                  data: suggestionList[index],
                   listData: sl<CaseGetAllPage>().getPages(QURAN_PAGE),
                   type: PageType.AZKAR_PAGE),
             );

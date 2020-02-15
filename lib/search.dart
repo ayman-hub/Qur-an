@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:moshaf/feature/data/model/static_const_data.dart';
-import 'package:moshaf/feature/domain/entities/Entities.dart';
 import 'package:moshaf/feature/domain/entities/read_entities.dart';
 import 'package:moshaf/router.gr.dart';
 
@@ -62,7 +61,6 @@ class SearchData extends SearchDelegate<String> {
           return ListTile(
             title: RichText(
               textDirection: TextDirection.rtl,
-              /*suggestionList[index].sorah,textDirection: TextDirection.rtl,*/
               text: TextSpan(
                   children:
                       getChooseChar(suggestionList[index].sorah.split(''))),
@@ -70,21 +68,20 @@ class SearchData extends SearchDelegate<String> {
             onTap: () {
               type == PageType.QURAN_PAGE
                   ? Router.navigator.pushNamed(
-                      Router.bodyQuranPage,
-                      arguments: BodyQuranPageArguments(
-                          data: suggestionList[index],
-                          listData: sl<CaseGetAllPage>().getPages(QURAN_PAGE),
-                          type: PageType.QURAN_PAGE),
-                    )
+                Router.bodyQuranPage,
+                arguments: BodyQuranPageArguments(
+                    data: suggestionList[index],
+                    listData: sl<CaseGetAllPage>().getPages(QURAN_PAGE),
+                    type: PageType.QURAN_PAGE),
+              )
                   : Router.navigator.pushNamed(
-                      Router.bodyQuranPage,
-                      arguments: BodyQuranPageArguments(
-                          data: suggestionList[index],
-                          listData: sl<CaseGetAllPage>().getPages(AZKAR_PAGE),
-                          type: PageType.AZKAR_PAGE),
-                    );
-            },
-          );
+                Router.bodyQuranPage,
+                arguments: BodyQuranPageArguments(
+                    data: suggestionList[index],
+                    listData: sl<CaseGetAllPage>().getPages(AZKAR_PAGE),
+                    type: PageType.AZKAR_PAGE),
+              );
+            });
         });
   }
 

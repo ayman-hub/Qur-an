@@ -37,7 +37,7 @@ class AzkarPage extends StatelessWidget {
                 showSearch(
                     context: context,
                     delegate:
-                    SearchData(data: data, type: PageType.QURAN_PAGE));
+                    SearchData(data: data, type: PageType.AZKAR_PAGE));
               },
             ),
           ),
@@ -60,7 +60,7 @@ class AzkarPage extends StatelessWidget {
                       Router.bodyQuranPage,
                       arguments: BodyQuranPageArguments(
                           data: data[index],
-                          listData: sl<CaseGetAllPage>().getPages(QURAN_PAGE),
+                          listData: sl<CaseGetAllPage>().getPages(AZKAR_PAGE),
                           type: PageType.AZKAR_PAGE),
                     )
                     /*Navigator.of(context).push(
